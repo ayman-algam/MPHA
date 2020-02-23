@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mpha/screens/adab_alziara.dart';
 import 'package:mpha/screens/azkar_mostahaba.dart';
+import 'package:mpha/screens/hajj_help.dart';
 import 'package:mpha/screens/manasic_alomrah.dart';
+import 'package:mpha/screens/pray_time.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_page.dart';
 import 'screens/manasic_alhajj.dart';
@@ -24,7 +26,7 @@ class MPHApp extends StatelessWidget {
         ),
       ),
 
-      initialRoute: 'splashScreen',
+      initialRoute: 'homePage',
 
       routes: {
         'splashScreen' : (context) => SplashScreen(),
@@ -33,6 +35,8 @@ class MPHApp extends StatelessWidget {
         'manasic_alomrah' : (context) => ManasicAlOmrah(),
         'adab_alziarah' : (context) => AdabAlZiarah(),
         'azkar_mostahaba' : (context) => AzkarMostahaba(),
+        'hajj_help' : (context) => HajjHelp(),
+        'pray_time' : (context) => PrayTime(),
       },
     );
   }

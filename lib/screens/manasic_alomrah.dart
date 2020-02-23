@@ -9,10 +9,9 @@ class ManasicAlOmrah extends StatefulWidget {
 class _ManasicAlOmrahState extends State<ManasicAlOmrah> {
   @override
   Widget build(BuildContext context) {
-    return OSliverAppBar(
-      lable: ksManasicAlOmrah,
-      backgroundImagePath: "src/images/manasic_appbar.png",
-      child: Center(
+    return OAppBar(
+      oAppBarLable: ksManasicAlOmrah,
+      oAppBarChild: Center(
         child: Text(
           ksManasicAlOmrah,
           style: ksTextStyle2,

@@ -1,15 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const Color kcTextSplash = Color(0xFFf3eab7);
 const Color kcPrimaryColor = Color(0xFF5B5C5E);
 
+const String ksHomePage= "الصفحة الرئيسة";
 const String ksManasicAlhajj = "مناسك الحج";
 const String ksManasicAlOmrah = "مناسك العمرة";
 const String ksAdabAlZiarah= "آداب الزيارة";
 const String ksAzkarMostahaba= "أذكار مستحبة";
 const String ksAzkarAlSabah= "أذكار الصباح";
 const String ksAzkarAlMasa= "أذكار المساء";
-const String ksHomePage= "الصفحة الرئيسة";
+const String ksAzkarBaadAlSalah= "أذكار بعد الصلاة";
+const String ksAzkar= "أذكار";
+const String ksQuran= "القرآن الكريم";
+const String ksSebha= "سبحة";
+const String ksHajjHelp= "دليل الحاج";
+const String ksPrayTime= "أوقات الصلاة";
+
+
 
 Widget sizedBoxHeight(int heightValue) {
   return SizedBox(
@@ -38,61 +47,90 @@ final ksTextStyle2 = TextStyle(
 );
 
 class MyCardView extends StatelessWidget {
-  MyCardView({this.myChild, this.onPress, this.cardColor});
+  MyCardView({this.lable, this.imageLocation, this.onPress});
 
-  final Widget myChild;
+  final String lable;
+  final String imageLocation;
   final Function onPress;
-  final Color cardColor;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPress,
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Container(
           decoration: BoxDecoration(
-            color: cardColor,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(15),
+              boxShadow: [new BoxShadow(
+                color: Colors.black,
+                blurRadius: 10.0,
+              ),]
           ),
-          child: myChild,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image(
+                    image: AssetImage(imageLocation),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Text(
+                  lable,
+                  style: ksTextStyle2.copyWith(
+                    fontSize: 20.0,
+                    letterSpacing: 1,
+                    color: kcPrimaryColor,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class ImageTextContainer extends StatelessWidget {
-  ImageTextContainer({this.imageLocation, this.lable});
+class OAppBar extends StatelessWidget {
 
-  final String imageLocation;
-  final String lable;
+  OAppBar({this.oAppBarChild, this.oAppBarLable});
+
+  final String oAppBarLable;
+  final Widget oAppBarChild;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Expanded(
-          flex: 3,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image(
-              image: AssetImage(imageLocation),
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
           ),
         ),
-        Expanded(
-          flex: 1,
-          child: Text(
-            lable,
-            style: ksTextStyle2.copyWith(
-              fontSize: 20.0,
-              letterSpacing: 1,
-              color: kcPrimaryColor,
-            ),
+        title: Text(
+            oAppBarLable,
+          style: TextStyle(
+            color: kcTextSplash,
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
           ),
-        )
-      ],
+        ),
+        backgroundColor: kcPrimaryColor,
+      ),
+      backgroundColor: kcPrimaryColor,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: oAppBarChild,
+      ),
     );
   }
 }
@@ -116,18 +154,22 @@ class OSliverAppBar extends StatelessWidget {
       child: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar(
-              pinned: this._pinned,
-              snap: this._snap,
-              floating: this._floating,
-              expandedHeight: 250.0,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text(
-                  lable,
-                ),
-                background: Image.asset(
-                  backgroundImagePath,
-                  fit: BoxFit.cover,
+            SliverPadding(
+              padding: EdgeInsets.all(8.0),
+              sliver: SliverAppBar(
+                centerTitle: true,
+                pinned: this._pinned,
+                snap: this._snap,
+                floating: this._floating,
+                expandedHeight: 250.0,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Text(
+                    lable,
+                  ),
+                  background: Image.asset(
+                    backgroundImagePath,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mpha/usageAssets.dart';
 
-class AdabAlZiarah extends StatefulWidget {
+class PrayTime extends StatefulWidget {
   @override
-  _AdabAlZiarahState createState() => _AdabAlZiarahState();
+  _PrayTimeState createState() => _PrayTimeState();
 }
 
-class _AdabAlZiarahState extends State<AdabAlZiarah> {
+class _PrayTimeState extends State<PrayTime> {
   @override
   Widget build(BuildContext context) {
     return OAppBar(
-      oAppBarLable: ksAdabAlZiarah,
-      oAppBarChild: Center(
+      oAppBarLable: ksPrayTime,
+      oAppBarChild:  Center(
         child: Text(
-          ksAdabAlZiarah,
+          ksPrayTime,
           style: ksTextStyle2,
         ),
       ),

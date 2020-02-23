@@ -9,15 +9,14 @@ class ManasicAlhajj extends StatefulWidget {
 class _ManasicAlhajjState extends State<ManasicAlhajj> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: OSliverAppBar(
-      lable: ksManasicAlhajj,
-      backgroundImagePath: "src/images/manasic_appbar.png",
-      child: Center(
+    return OAppBar(
+      oAppBarLable: ksManasicAlhajj,
+      oAppBarChild:  Center(
         child: Text(
           ksManasicAlhajj,
           style: ksTextStyle2,
         ),
       ),
-    ));
+    );
   }
 }
