@@ -34,7 +34,7 @@ class MPHApp extends StatelessWidget {
         ),
       ),
 
-      initialRoute: 'manasic_alhajj',
+      initialRoute: 'splashScreen',
 
       routes: {
         'testPlace': (context) => TestPlace(),
