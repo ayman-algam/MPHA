@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mpha/classes/menu_page.dart';
 import 'package:mpha/usageAssets.dart';
+import 'package:mpha/strings.dart';
 
 class ManasicAlOmrah extends StatefulWidget {
   @override
@@ -9,9 +11,9 @@ class ManasicAlOmrah extends StatefulWidget {
 class _ManasicAlOmrahState extends State<ManasicAlOmrah> {
   @override
   Widget build(BuildContext context) {
-    return OAppBar(
-      oAppBarLable: ksManasicAlOmrah,
-      oAppBarChild: Center(
+    return MenuPage(
+      title: ksManasicAlOmrah,
+      child: Center(
         child: Text(
           ksManasicAlOmrah,
           style: ksTextStyle2,

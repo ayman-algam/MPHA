@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/usageAssets.dart';
+import 'package:mpha/classes/animated_buttom.dart';
+import 'package:mpha/classes/menu_page.dart';
+import 'package:mpha/strings.dart';
 
 class AzkarMostahaba extends StatefulWidget {
   @override
@@ -9,93 +11,55 @@ class AzkarMostahaba extends StatefulWidget {
 class _AzkarMostahabaState extends State<AzkarMostahaba> {
   @override
   Widget build(BuildContext context) {
-    return OAppBar(
-      oAppBarLable: ksAzkarMostahaba,
-      oAppBarChild: Column(
+    return MenuPage(
+      title: ksAzkarMostahaba,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
               child: Row(
             children: <Widget>[
               Expanded(
                 // todo Azkar AlSabah
-                child: MyCardView(
-                  lable: ksAzkarAlSabah,
-                  imageLocation: "src/images/azkar_elsabah.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
+                child: OAnimatedImageTextButton(
+                  buttonText: ksAzkarAlSabah,
+                  buttonImage: "assets/images/azkar_elsabah.PNG",
+                  targetedScreen: "azkar_alsabah",
                 ),
               ),
               Expanded(
                 // todo Azkar AlMasa
-                child: MyCardView(
-                  lable: ksAzkarAlMasa,
-                  imageLocation: "src/images/azkar_elmasa.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
+                child: OAnimatedImageTextButton(
+                  buttonText: ksAzkarAlMasa,
+                  buttonImage: "assets/images/azkar_elmasa.PNG",
+                  targetedScreen: "azkar_almasa",
                 ),
               ),
             ],
           )),
           Expanded(
-              child: Row(
-            children: <Widget>[
-              Expanded(
-                // todo Azkar Baad AlSalah
-                child: MyCardView(
-                  lable: ksAzkarBaadAlSalah,
-                  imageLocation: "src/images/azkar_baad_alsalah.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
-                ),
-              ),
-              Expanded(
-                // todo
-                child: MyCardView(
-                  lable: ksAzkarAlSabah,
-                  imageLocation: "src/images/azkar_elsabah.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
-                ),
-              ),
-            ],
-          )),
+              child: OAnimatedImageTextButton(
+                buttonText: ksAzkarBaadAlSalah,
+                buttonImage: "assets/images/azkar_after_prayer.png",
+                targetedScreen: "",
+              )),
           Expanded(
               child: Row(
             children: <Widget>[
               Expanded(
                 // todo Quran
-                child: MyCardView(
-                  lable: ksQuran,
-                  imageLocation: "src/images/quran.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
+                child: OAnimatedImageTextButton(
+                  buttonText: ksQuran,
+                  buttonImage: "assets/images/quran.png",
+                  targetedScreen: "",
                 ),
               ),
               Expanded(
                 // todo Sebha
-                child: MyCardView(
-                  lable: ksSebha,
-                  imageLocation: "src/images/sebha.png",
-                  onPress: () {
-                    setState(
-                      () {},
-                    );
-                  },
+                child: OAnimatedImageTextButton(
+                  buttonText: ksSebha,
+                  buttonImage: "assets/images/sebha.png",
+                  targetedScreen: "",
                 ),
               ),
             ],

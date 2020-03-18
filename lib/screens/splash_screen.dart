@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpha/colors.dart';
 import 'dart:async';
 import 'package:mpha/usageAssets.dart';
 
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image(
-                    image: AssetImage("src/images/main_icon.png"),
+                    image: AssetImage("assets/images/main_icon.png"),
                   ),
                   sizedBoxHeight(10),
                   Text(
