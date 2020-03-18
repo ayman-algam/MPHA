@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/animated_buttom.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mpha/classes/menu_page.dart';
 import 'package:mpha/strings.dart';
+import 'package:mpha/usageAssets.dart';
+
+import '../colors.dart';
+
+enum SelectedGender { male, female }
+enum SelectedTime { before, after }
+enum SelectedHajjType { ifraad, qiraan, tamattu }
 
 class ManasicAlhajj extends StatefulWidget {
   @override
@@ -9,35 +16,415 @@ class ManasicAlhajj extends StatefulWidget {
 }
 
 class _ManasicAlhajjState extends State<ManasicAlhajj> {
+  SelectedGender selectGender;
+  SelectedTime selectedTime;
+  SelectedHajjType selectedHajjType;
+
   @override
   Widget build(BuildContext context) {
     return MenuPage(
       title: ksManasicAlhajj,
       child: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Expanded(
-            child: OAnimatedTextButton(
-              buttonText: ksHajjEfrad,
-              targetedScreen: "ht_ifraad",
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                ksGender,
+                textAlign: TextAlign.right,
+                style: myTextStyle,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Divider(
+                  height: 1.0,
+                  color: kcTextSplash,
+                ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectGender = SelectedGender.male;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: kcPrimaryColor,
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                new BoxShadow(
+                                  color: selectGender == SelectedGender.male
+                                      ? Colors.yellow
+                                      : Colors.black,
+                                  blurRadius:
+                                  selectGender == SelectedGender.male
+                                      ? 10
+                                      : 2.0,
+                                ),
+                              ]),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.mars,
+                                size: 50,
+                                color: selectGender == SelectedGender.male
+                                    ? Colors.yellow
+                                    : kcTextSplash,
+                              ),
+                              Text(
+                                ksMale,
+                                style: ksTextStyle2.copyWith(
+                                  color: selectGender == SelectedGender.male
+                                      ? Colors.yellow
+                                      : kcTextSplash,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectGender = SelectedGender.female;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: kcPrimaryColor,
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                new BoxShadow(
+                                  color: selectGender == SelectedGender.female
+                                      ? Colors.yellow
+                                      : Colors.black,
+                                  blurRadius:
+                                  selectGender == SelectedGender.female
+                                      ? 10
+                                      : 2.0,
+                                ),
+                              ]),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.venus,
+                                size: 50,
+                                color: selectGender == SelectedGender.female
+                                    ? Colors.yellow
+                                    : kcTextSplash,
+                              ),
+                              Text(
+                                ksFemale,
+                                style: ksTextStyle2.copyWith(
+                                  color: selectGender == SelectedGender.female
+                                      ? Colors.yellow
+                                      : kcTextSplash,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                ksTimeToArriveMaka,
+                textAlign: TextAlign.right,
+                style: myTextStyle,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Divider(
+                  height: 1.0,
+                  color: kcTextSplash,
+                ),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedTime = SelectedTime.before;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: kcPrimaryColor,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          new BoxShadow(
+                            color: selectedTime == SelectedTime.before
+                                ? Colors.yellow
+                                : Colors.black,
+                            blurRadius:
+                            selectedTime == SelectedTime.before
+                                ? 10
+                                : 2.0,
+                          ),
+                        ]),
+                    child: Center(
+                      child: Text(
+                        ksBefore8ZoElhejja,
+                        style: ksTextStyle2.copyWith(
+                          color: selectedTime == SelectedTime.before
+                              ? Colors.yellow
+                              : kcTextSplash,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedTime = SelectedTime.after;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: kcPrimaryColor,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          new BoxShadow(
+                            color: selectedTime == SelectedTime.after
+                                ? Colors.yellow
+                                : Colors.black,
+                            blurRadius: selectedTime == SelectedTime.after
+                                ? 10
+                                : 2.0,
+                          ),
+                        ]),
+                    child: Center(
+                      child: Text(
+                        ksAfter8ZoElhejja,
+                        style: ksTextStyle2.copyWith(
+                            color: selectedTime == SelectedTime.after
+                                ? Colors.yellow
+                                : kcTextSplash),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+
+              Text(
+                ksHajjTypes,
+                textAlign: TextAlign.right,
+                style: myTextStyle,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Divider(
+                  height: 1.0,
+                  color: kcTextSplash,
+                ),
+              ),
+
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedHajjType = SelectedHajjType.ifraad;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: kcPrimaryColor,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: selectedHajjType == SelectedHajjType.ifraad
+                              ? Colors.yellow
+                              : Colors.black,
+                          blurRadius:
+                          selectedHajjType == SelectedHajjType.ifraad
+                              ? 10
+                              : 2.0,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        ksHajjEfrad,
+                        style: ksTextStyle2.copyWith(
+                          color: selectedHajjType == SelectedHajjType.ifraad
+                              ? Colors.yellow
+                              : kcTextSplash,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedHajjType = SelectedHajjType.qiraan;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: kcPrimaryColor,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: selectedHajjType == SelectedHajjType.qiraan
+                              ? Colors.yellow
+                              : Colors.black,
+                          blurRadius:
+                          selectedHajjType == SelectedHajjType.qiraan
+                              ? 10
+                              : 2.0,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        ksHajjAlQiran,
+                        style: ksTextStyle2.copyWith(
+                          color: selectedHajjType == SelectedHajjType.qiraan
+                              ? Colors.yellow
+                              : kcTextSplash,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedHajjType = SelectedHajjType.tamattu;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: kcPrimaryColor,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        new BoxShadow(
+                          color:
+                          selectedHajjType == SelectedHajjType.tamattu
+                              ? Colors.yellow
+                              : Colors.black,
+                          blurRadius:
+                          selectedHajjType == SelectedHajjType.tamattu
+                              ? 10
+                              : 2.0,
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        ksHajjAltamattu,
+                        style: ksTextStyle2.copyWith(
+                          color:
+                          selectedHajjType == SelectedHajjType.tamattu
+                              ? Colors.yellow
+                              : kcTextSplash,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Divider(
+              height: 1.0,
+              color: kcTextSplash,
             ),
           ),
-          Expanded(
-            child: OAnimatedTextButton(
-              buttonText: ksHajjAlQiran,
-              targetedScreen: "ht_qiraan",
+
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedHajjType = SelectedHajjType.ifraad;
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: Container(
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: kcTextSplash,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    new BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 2.0,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    ksSave,
+                    style: ksTextStyle2.copyWith(
+                      color: kcPrimaryColor,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
-          Expanded(
-              child: OAnimatedTextButton(
-                buttonText: ksHajjAltamattu,
-                targetedScreen: "ht_tamattu",
-              )
-          ),
+
+
         ],
       ),
     );
   }
 }
+
+
+final myTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20.0,
+  color: kcTextSplash,
+);

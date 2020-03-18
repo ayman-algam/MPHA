@@ -11,10 +11,11 @@ import 'package:mpha/screens/m_saee.dart';
 import 'package:mpha/screens/manasic_alomrah.dart';
 import 'package:mpha/screens/pray_time.dart';
 import 'package:mpha/screens/test_plase.dart';
+
 import 'colors.dart';
-import 'screens/splash_screen.dart';
 import 'screens/home_page.dart';
 import 'screens/manasic_alhajj.dart';
+import 'screens/splash_screen.dart';
 
 void main() => runApp(MPHApp());
 
@@ -33,7 +34,7 @@ class MPHApp extends StatelessWidget {
         ),
       ),
 
-      initialRoute: 'homePage',
+      initialRoute: 'manasic_alhajj',
 
       routes: {
         'testPlace': (context) => TestPlace(),

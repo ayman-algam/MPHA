@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'colors.dart';
 
 Widget sizedBoxHeight(int heightValue) {
@@ -54,7 +55,7 @@ class OCardView extends StatelessWidget {
             boxShadow: [
               new BoxShadow(
                 color: Colors.black,
-                blurRadius: 5.0,
+                blurRadius: 2.0,
               ),
             ]),
         child: child,
