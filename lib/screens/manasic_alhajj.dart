@@ -31,6 +31,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          // gender text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
@@ -39,6 +40,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
               style: myTextStyle,
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Divider(

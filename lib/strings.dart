@@ -14,7 +14,19 @@ const String ksZmzm = "زمزم";
 
 
 const String ksAtDay8 = "أعمال يوم الثامن من ذو الحجة";
+
+const String ksMSleepInMena = "المبيت بمنى";
+
 const String ksAtDay9 = "أعمال يوم عرفة";
+
+const String ksAtDay10 = "أعمال يوم العاشر من ذو الحجة";
+
+const String ksMGamratAlagaba = "جمرة العقبة";
+const String ksMRansom = "ذبح الهدي";
+const String ksMCutAndShaving = "الحلق والتقصير";
+const String ksMTawafAlefada = "طواف الإفاضة";
+
+const String ksMIfadaToMozdalifa = "مزدلفة";
 
 const String ksHajjAlQiran = "حَجُ القِران";
 const String ksHajjAltamattu = "جَحُ التمتُّع";

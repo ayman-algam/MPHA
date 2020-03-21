@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'classes/animated_buttom.dart';
 import 'colors.dart';
 
 Widget sizedBoxHeight(int heightValue) {
@@ -63,3 +65,58 @@ class OCardView extends StatelessWidget {
     );
   }
 }
+
+class OGroup extends StatelessWidget {
+  OGroup({this.number, this.targetedScreen, this.buttonImage, this.buttonText});
+
+  final int number;
+  final String targetedScreen;
+  final String buttonImage;
+  final String buttonText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        Container(
+          height: 72.0,
+          width: 72.0,
+          child: Stack(
+            children: <Widget>[
+              Icon(
+                FontAwesomeIcons.circle,
+                size: 70.0,
+                color: kcTextSplash,
+              ),
+              Center(
+                child: Text(
+                  "$number",
+                  style: TextStyle(color: kcTextSplash),
+                ),
+              )
+            ],
+          ),
+        ),
+        Container(
+          height: 170.0,
+          width: 150.0,
+          child: OAnimatedImageTextButton(
+            buttonImage: buttonImage,
+            targetedScreen: targetedScreen,
+            buttonText: buttonText,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+Widget ODivider = Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: Divider(
+    height: 1.0,
+    color: kcTextSplash,
+  ),
+);

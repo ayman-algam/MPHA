@@ -8,8 +8,16 @@ import 'package:mpha/screens/ht_Qiraan.dart';
 import 'package:mpha/screens/ht_Tamattu.dart';
 import 'package:mpha/screens/m_Ihram.dart';
 import 'package:mpha/screens/m_arafa.dart';
+import 'package:mpha/screens/m_cut_and_shaving.dart';
+import 'package:mpha/screens/m_drink_from_zamzam.dart';
+import 'package:mpha/screens/m_ifada_to_mozdalifa.dart';
+import 'package:mpha/screens/m_magam_ibrahim.dart';
+import 'package:mpha/screens/m_rami_gamrat_alagaba.dart';
 import 'package:mpha/screens/m_saee.dart';
+import 'package:mpha/screens/m_sleep_in_mena.dart';
 import 'package:mpha/screens/m_tawaf.dart';
+import 'package:mpha/screens/m_ransom.dart';
+import 'package:mpha/screens/m_tawaf_alefada.dart';
 import 'package:mpha/screens/manasic_alomrah.dart';
 import 'package:mpha/screens/pray_time.dart';
 import 'package:mpha/screens/test_plase.dart';
@@ -53,8 +61,19 @@ class MPHApp extends StatelessWidget {
 
         'm_ihram': (context) => MIhram(),
         'm_tawaf': (context) => MTawaf(),
+        'm_magam_ibrahim': (context) => MMagamIbrahim(),
+        'm_drink_from_zamzam': (context) => MDrinkFromZamzam(),
         'm_saee': (context) => MSaee(),
+
+        'm_sleep_in_mena': (context) => MSleepInMena(),
+
         'm_arafa': (context) => MArafa(),
+        'm_ifada_to_mozdalifa': (context) => MIfadaToMozdalifa(),
+
+        'm_rami_gamrat_alagaba': (context) => MRamiGamratAlagaba(),
+        'm_ransom': (context) => MRansom(),
+        'm_cut_and_shaving': (context) => MCutAndShaving(),
+        'm_tawaf_alefada': (context) => MTawafAlEfada(),
 
         'manasic_alomrah' : (context) => ManasicAlOmrah(),
 
