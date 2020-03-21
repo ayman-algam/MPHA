@@ -15,7 +15,7 @@ class _MIhramState extends State<MIhram> {
   @override
   Widget build(BuildContext context) {
     return MenuPage(
-      title: ksIhram,
+      title: ksMIhram,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

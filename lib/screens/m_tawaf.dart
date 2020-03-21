@@ -15,7 +15,7 @@ class _MTawafState extends State<MTawaf> {
   @override
   Widget build(BuildContext context) {
     return MenuPage(
-      title: ksIhram,
+      title: ksMTawaf,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -84,18 +84,18 @@ class Slider {
 
 final slideList = [
   Slider(
-    imageUrl: "assets/images/m_ihram.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_ihram.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_ihram.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_ihram.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_ihram.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
 ];

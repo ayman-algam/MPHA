@@ -5,7 +5,17 @@ const String ksMaps = "الخرائط";
 const String ksManasicAlhajj = "مناسك الحَج";
 const String ksExit = "خروج";
 const String ksHajjTypes = "أنواع الحَجْ";
+
 const String ksHajjEfrad = "حَجُ الإِفراد";
+const String ksBeforOf8 = "أعمال ما قبل اليوم الثامن من ذو الحجة";
+
+const String ksMagamIbrahim = "مقام إبراهيم";
+const String ksZmzm = "زمزم";
+
+
+const String ksAtDay8 = "أعمال يوم الثامن من ذو الحجة";
+const String ksAtDay9 = "أعمال يوم عرفة";
+
 const String ksHajjAlQiran = "حَجُ القِران";
 const String ksHajjAltamattu = "جَحُ التمتُّع";
 const String ksManasicAlOmrah = "مَناسك العُمرة";
@@ -20,10 +30,11 @@ const String ksSebha = "سِبحة";
 const String ksHajjHelp = "دليل الحاج";
 const String ksPrayTime = "أوقات الصلاة";
 const String ksSetting = "الضبط";
-const String ksIhram = "الإِحْرام";
-const String ksTwaf = "الطواف";
-const String ksSaee = "السعي";
-const String ksArafa = "الوقوف بعرفة";
+const String ksNeiaa = "النية";
+const String ksMIhram = "الإِحْرام";
+const String ksMTawaf = "الطواف";
+const String ksMSaee = "السعي";
+const String ksMArafa = "الوقوف بعرفة";
 const String ksRamiAlgamarat = "رمي الجمرات";
 const String ksBefore = "ما قبل النسك";
 const String ksWagibatAlIhram = "الواجِبَات";
@@ -33,12 +44,13 @@ const String ksMahzoratAlIhram = "المحْظُورات";
 const String ksVedios = "فيديوهات تعليمية";
 
 
-const String ksGender = "إختار النوع";
+const String ksAboutHajj = "عن الحاج";
+const String ksGender = "جنس الحاج";
 const String ksMale = "ذكر";
 const String ksFemale = "أنثى";
 
-const String ksBefore8ZoElhejja = "قبل 8 ذو الحجة";
-const String ksAfter8ZoElhejja = "يوم 8 ذو الحجة";
+const String ksBefore8ZoElhejja = "قبل يوم عرفة";
+const String ksAfter8ZoElhejja = "يوم عرفة";
 
 const String ksTimeToArriveMaka = "زمن الوصول الى مكة";
 

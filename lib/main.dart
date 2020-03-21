@@ -7,7 +7,9 @@ import 'package:mpha/screens/ht_Ifraad.dart';
 import 'package:mpha/screens/ht_Qiraan.dart';
 import 'package:mpha/screens/ht_Tamattu.dart';
 import 'package:mpha/screens/m_Ihram.dart';
+import 'package:mpha/screens/m_arafa.dart';
 import 'package:mpha/screens/m_saee.dart';
+import 'package:mpha/screens/m_tawaf.dart';
 import 'package:mpha/screens/manasic_alomrah.dart';
 import 'package:mpha/screens/pray_time.dart';
 import 'package:mpha/screens/test_plase.dart';
@@ -29,28 +31,39 @@ class MPHApp extends StatelessWidget {
         scaffoldBackgroundColor: kcPrimaryColor,
         textTheme: TextTheme(
           body1: TextStyle(
-            fontSize: 24.0,
+            fontSize: 20.0,
           ),
         ),
       ),
 
-      initialRoute: 'splashScreen',
+      initialRoute: 'manasic_alhajj',
 
       routes: {
         'testPlace': (context) => TestPlace(),
+
         'splashScreen' : (context) => SplashScreen(),
+
         'homePage' : (context) => HomePage(),
+
         'manasic_alhajj' : (context) => ManasicAlhajj(),
+
         'ht_ifraad': (context) => HTIfraad(),
         'ht_qiraan': (context) => HTQiraan(),
         'ht_tamattu': (context) => HTTamattu(),
+
         'm_ihram': (context) => MIhram(),
+        'm_tawaf': (context) => MTawaf(),
         'm_saee': (context) => MSaee(),
+        'm_arafa': (context) => MArafa(),
+
         'manasic_alomrah' : (context) => ManasicAlOmrah(),
+
         'adab_alziarah' : (context) => AdabAlZiarah(),
+
         'azkar_mostahaba' : (context) => AzkarMostahaba(),
         'azkar_alsabah': (context) => AzkarAlSabah(),
         'azkar_almasa': (context) => AzkarAlmasa(),
+
         'pray_time' : (context) => PrayTime(),
       },
     );

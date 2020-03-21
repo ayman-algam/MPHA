@@ -32,6 +32,7 @@ class _OAnimatedImageTextButtonState extends State<OAnimatedImageTextButton> {
             isPressed = false;
             Navigator.pushNamed(context, widget.targetedScreen);
           });
+
         });
       },
       child: AnimatedContainer(
@@ -112,6 +113,7 @@ class _OAnimatedTextButtonState extends State<OAnimatedTextButton> {
             isPressed = false;
             Navigator.pushNamed(context, widget.targetedScreen);
           });
+
         });
       },
       child: AnimatedContainer(

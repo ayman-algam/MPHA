@@ -23,7 +23,7 @@ final ksTextStyle1 = TextStyle(
 
 final ksTextStyle2 = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 25.0,
+  fontSize: 20.0,
   fontFamily: 'SourceSansPro',
   color: kcTextSplash,
   letterSpacing: 2.0,

@@ -6,16 +6,16 @@ import 'package:mpha/classes/slide_item.dart';
 
 import '../strings.dart';
 
-class MSaee extends StatefulWidget {
+class MArafa extends StatefulWidget {
   @override
-  _MSaeeState createState() => _MSaeeState();
+  _MArafaState createState() => _MArafaState();
 }
 
-class _MSaeeState extends State<MSaee> {
+class _MArafaState extends State<MArafa> {
   @override
   Widget build(BuildContext context) {
     return MenuPage(
-      title: ksMSaee,
+      title: ksMArafa,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -32,13 +32,13 @@ class _MSaeeState extends State<MSaee> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMSaee
+                // todo wagibat AlMArafa
                 Expanded(
                     child: OAnimatedTextButton(
                       buttonText: ksWagibatAlIhram,
                     )),
 
-                // todo  Sunn AlMSaee
+                // todo  Sunn AlMArafa
                 Expanded(
                     child: OAnimatedTextButton(
                       buttonText: ksSunnAlIhram,
@@ -50,13 +50,13 @@ class _MSaeeState extends State<MSaee> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMSaee
+                // todo MndobatAlMArafa
                 Expanded(
                     child: OAnimatedTextButton(
                       buttonText: ksMndobatAlIhram,
                     )),
 
-                // todo ksMahzorat AlMSaee
+                // todo ksMahzorat AlMArafa
                 Expanded(
                   child: OAnimatedTextButton(
                     buttonText: ksMahzoratAlIhram,
@@ -84,18 +84,18 @@ class Slider {
 
 final slideList = [
   Slider(
-    imageUrl: "assets/images/m_saee.png",
+    imageUrl: "assets/images/m_arafa.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_saee.png",
+    imageUrl: "assets/images/m_arafa.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_saee.png",
+    imageUrl: "assets/images/m_arafa.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_saee.png",
+    imageUrl: "assets/images/m_arafa.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_saee.png",
+    imageUrl: "assets/images/m_arafa.png",
   ),
 ];
