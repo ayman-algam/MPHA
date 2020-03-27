@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/animated_buttom.dart';
-import 'package:mpha/classes/menu_page.dart';
+import 'package:mpha/classes/widgets/animated_buttom.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
 import 'package:mpha/strings.dart';
 
 class AzkarMostahaba extends StatefulWidget {

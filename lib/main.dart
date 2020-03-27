@@ -12,6 +12,7 @@ import 'package:mpha/screens/m_cut_and_shaving.dart';
 import 'package:mpha/screens/m_drink_from_zamzam.dart';
 import 'package:mpha/screens/m_ifada_to_mozdalifa.dart';
 import 'package:mpha/screens/m_magam_ibrahim.dart';
+import 'package:mpha/screens/m_rami_algamarat.dart';
 import 'package:mpha/screens/m_rami_gamrat_alagaba.dart';
 import 'package:mpha/screens/m_saee.dart';
 import 'package:mpha/screens/m_sleep_in_mena.dart';
@@ -21,8 +22,7 @@ import 'package:mpha/screens/m_tawaf_alefada.dart';
 import 'package:mpha/screens/manasic_alomrah.dart';
 import 'package:mpha/screens/pray_time.dart';
 import 'package:mpha/screens/test_plase.dart';
-
-import 'colors.dart';
+import 'assets.dart';
 import 'screens/home_page.dart';
 import 'screens/manasic_alhajj.dart';
 import 'screens/splash_screen.dart';
@@ -44,7 +44,7 @@ class MPHApp extends StatelessWidget {
         ),
       ),
 
-      initialRoute: 'manasic_alhajj',
+      initialRoute: 'azkar_mostahaba',
 
       routes: {
         'testPlace': (context) => TestPlace(),
@@ -74,6 +74,8 @@ class MPHApp extends StatelessWidget {
         'm_ransom': (context) => MRansom(),
         'm_cut_and_shaving': (context) => MCutAndShaving(),
         'm_tawaf_alefada': (context) => MTawafAlEfada(),
+
+        'm_rami_algamarat': (context) => MRamiAlgamarat(),
 
         'manasic_alomrah' : (context) => ManasicAlOmrah(),
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/colors.dart';
 import 'package:mpha/strings.dart';
-import 'package:mpha/usageAssets.dart';
+
+import '../../assets.dart';
 
 class MenuPage extends StatefulWidget {
   final String title;
@@ -57,9 +57,7 @@ class _MenuPageState extends State<MenuPage>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     myScreenHeight = size.height;
     myScreenWidth = size.width;
 
@@ -112,7 +110,6 @@ class _MenuPageState extends State<MenuPage>
                               image: AssetImage("assets/images/icon.png"),
                             ),
                           ),
-
                           Expanded(
                             flex: 1,
                             child: Text(
@@ -125,7 +122,6 @@ class _MenuPageState extends State<MenuPage>
                     ),
                   ),
                 ),
-
                 Expanded(
                   flex: 2,
                   child: Material(
@@ -146,7 +142,6 @@ class _MenuPageState extends State<MenuPage>
                               Navigator.pushNamed(context, 'homePage');
                             },
                           ),
-
                           MenuItem(
                             lable: ksPrayTime,
                             iconData: Icons.timer,
@@ -286,11 +281,9 @@ class _MenuPageState extends State<MenuPage>
       ),
     );
   }
-
 }
 
 class MenuItem extends StatelessWidget {
-
   MenuItem({this.lable, this.onPress, this.iconData});
 
   final Function onPress;
@@ -316,9 +309,7 @@ class MenuItem extends StatelessWidget {
             ),
             title: Text(
               lable,
-              style: ksTextStyle2.copyWith(
-                  fontSize: 20.0
-              ),
+              style: ksTextStyle2.copyWith(fontSize: 20.0),
             ),
           ),
         ),
@@ -326,8 +317,3 @@ class MenuItem extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

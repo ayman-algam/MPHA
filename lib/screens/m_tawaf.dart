@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/animated_buttom.dart';
-import 'package:mpha/classes/menu_page.dart';
-import 'package:mpha/classes/slide_item.dart';
+import 'package:mpha/classes/widgets/animated_buttom.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/classes/widgets/slide_item.dart';
 
 import '../strings.dart';
 

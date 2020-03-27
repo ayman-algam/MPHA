@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:mpha/usageAssets.dart';
-
-import '../colors.dart';
+import '../assets.dart';
 import '../strings.dart';
 
 class HTCBefore8 extends StatelessWidget {

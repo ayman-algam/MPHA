@@ -6,16 +6,16 @@ import 'package:mpha/classes/widgets/slide_item.dart';
 
 import '../strings.dart';
 
-class MRamiGamratAlagaba extends StatefulWidget {
+class MTawafAlWadaa extends StatefulWidget {
   @override
-  _MRamiGamratAlagabaState createState() => _MRamiGamratAlagabaState();
+  _MTawafAlWadaaState createState() => _MTawafAlWadaaState();
 }
 
-class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
+class _MTawafAlWadaaState extends State<MTawafAlWadaa> {
   @override
   Widget build(BuildContext context) {
     return MenuPage(
-      title: ksMGamratAlagaba,
+      title: ksMTawafAlWadaa,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -32,13 +32,13 @@ class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMRamiGamratAlagaba
+                // todo wagibat AlMTawafAlWadaa
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksWagibatAlIhram,
                 )),
 
-                // todo  Sunn AlMRamiGamratAlagaba
+                // todo  Sunn AlMTawafAlWadaa
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksSunnAlIhram,
@@ -50,13 +50,13 @@ class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMRamiGamratAlagaba
+                // todo MndobatAlMTawafAlWadaa
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksMndobatAlIhram,
                 )),
 
-                // todo ksMahzorat AlMRamiGamratAlagaba
+                // todo ksMahzorat AlMTawafAlWadaa
                 Expanded(
                   child: OAnimatedTextButton(
                     buttonText: ksMahzoratAlIhram,
@@ -84,18 +84,18 @@ class Slider {
 
 final slideList = [
   Slider(
-    imageUrl: "assets/images/m_arafa.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_arafa.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_arafa.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_arafa.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
   Slider(
-    imageUrl: "assets/images/m_arafa.png",
+    imageUrl: "assets/images/m_tawaf.png",
   ),
 ];

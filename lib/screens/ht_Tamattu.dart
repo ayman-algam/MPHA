@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/menu_page.dart';
+import 'package:mpha/assets.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
 import 'package:mpha/strings.dart';
-import 'package:mpha/usageAssets.dart';
 
 class HTTamattu extends StatefulWidget {
   @override

@@ -6,16 +6,16 @@ import 'package:mpha/classes/widgets/slide_item.dart';
 
 import '../strings.dart';
 
-class MRamiGamratAlagaba extends StatefulWidget {
+class MRamiAlgamarat extends StatefulWidget {
   @override
-  _MRamiGamratAlagabaState createState() => _MRamiGamratAlagabaState();
+  _MRamiAlgamaratState createState() => _MRamiAlgamaratState();
 }
 
-class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
+class _MRamiAlgamaratState extends State<MRamiAlgamarat> {
   @override
   Widget build(BuildContext context) {
     return MenuPage(
-      title: ksMGamratAlagaba,
+      title: ksRamiAlgamarat,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -32,13 +32,13 @@ class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMRamiGamratAlagaba
+                // todo wagibat AlMRamiAlgamarat
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksWagibatAlIhram,
                 )),
 
-                // todo  Sunn AlMRamiGamratAlagaba
+                // todo  Sunn AlMRamiAlgamarat
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksSunnAlIhram,
@@ -50,13 +50,13 @@ class _MRamiGamratAlagabaState extends State<MRamiGamratAlagaba> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMRamiGamratAlagaba
+                // todo MndobatAlMRamiAlgamarat
                 Expanded(
                     child: OAnimatedTextButton(
                   buttonText: ksMndobatAlIhram,
                 )),
 
-                // todo ksMahzorat AlMRamiGamratAlagaba
+                // todo ksMahzorat AlMRamiAlgamarat
                 Expanded(
                   child: OAnimatedTextButton(
                     buttonText: ksMahzoratAlIhram,

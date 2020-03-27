@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'classes/animated_buttom.dart';
-import 'colors.dart';
+import 'classes/widgets/animated_buttom.dart';
+
+const Color kcTextSplash = Color(0xFFf3eab7);
+const Color kcPrimaryColor = Color(0xFF5B5C5E);
 
 Widget sizedBoxHeight(int heightValue) {
   return SizedBox(
@@ -39,9 +41,7 @@ final ksTextStyle3 = TextStyle(
   letterSpacing: 1.0,
 );
 
-
 class OCardView extends StatelessWidget {
-
   OCardView({this.child});
 
   final Widget child;
@@ -120,3 +120,23 @@ Widget ODivider = Padding(
     color: kcTextSplash,
   ),
 );
+
+class SlideDot extends StatelessWidget {
+  bool isActive;
+
+  SlideDot(this.isActive);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 100),
+      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+      height: isActive ? 15 : 8,
+      width: isActive ? 15 : 8,
+      decoration: BoxDecoration(
+        color: isActive ? kcTextSplash : Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+    );
+  }
+}

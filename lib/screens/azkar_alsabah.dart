@@ -1,277 +1,237 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/azkar.dart';
-import 'package:mpha/classes/menu_page.dart';
-import 'package:mpha/strings.dart';
+import 'package:mpha/classes/models/ziker_content.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/classes/widgets/ziker_generator.dart';
 
-class AzkarAlsabahContent {
-  final int id;
-  final int iteration;
-  final String azt;
-  final String azc;
-  final String azf;
-
-  AzkarAlsabahContent({this.id, this.iteration, this.azt, this.azc, this.azf});
-}
-
-List azkarAlsabahContent = [
-  AzkarAlsabahContent(
-    id: 1,
-    iteration: 1,
-    azt: ast1,
-    azc: asc1,
-    azf: asf1,
-  ),
-
-  AzkarAlsabahContent(
-    id: 2,
-    iteration: 3,
-    azt: ast2,
-    azc: asc2,
-    azf: asf2,
-  ),
-
-  AzkarAlsabahContent(
-    id: 3,
-    iteration: 3,
-    azt: ast3,
-    azc: asc3,
-    azf: asf3,
-  ),
-
-  AzkarAlsabahContent(
-    id: 4,
-    iteration: 3,
-    azt: ast4,
-    azc: asc4,
-    azf: asf4,
-  ),
-
-  AzkarAlsabahContent(
-    id: 5,
-    iteration: 1,
-    azt: ast5,
-    azc: asc5,
-    azf: asf5,
-  ),
-
-  AzkarAlsabahContent(
-    id: 6,
-    iteration: 1,
-    azt: ast6,
-    azc: asc6,
-    azf: asf6,
-  ),
-
-  AzkarAlsabahContent(
-    id: 7,
-    iteration: 3,
-    azt: ast7,
-    azc: asc7,
-    azf: asf7,
-  ),
-
-  AzkarAlsabahContent(
-    id: 8,
-    iteration: 4,
-    azt: ast8,
-    azc: asc8,
-    azf: asf8,
-  ),
-
-  AzkarAlsabahContent(
-    id: 9,
-    iteration: 1,
-    azt: ast9,
-    azc: asc9,
-    azf: asf9,
-  ),
-
-  AzkarAlsabahContent(
-    id: 10,
-    iteration: 7,
-    azt: ast10,
-    azc: asc10,
-    azf: asf10,
-  ),
-
-  AzkarAlsabahContent(
-    id: 11,
-    iteration: 3,
-    azt: ast11,
-    azc: asc11,
-    azf: asf11,
-  ),
-
-  AzkarAlsabahContent(
-    id: 12,
-    iteration: 1,
-    azt: ast12,
-    azc: asc12,
-    azf: asf12,
-  ),
-
-  AzkarAlsabahContent(
-    id: 13,
-    iteration: 1,
-    azt: ast13,
-    azc: asc13,
-    azf: asf13,
-  ),
-
-  AzkarAlsabahContent(
-    id: 14,
-    iteration: 3,
-    azt: ast14,
-    azc: asc14,
-    azf: asf14,
-  ),
-
-  AzkarAlsabahContent(
-    id: 15,
-    iteration: 3,
-    azt: ast15,
-    azc: asc15,
-    azf: asf15,
-  ),
-
-  AzkarAlsabahContent(
-    id: 16,
-    iteration: 3,
-    azt: ast16,
-    azc: asc16,
-    azf: asf16,
-  ),
-
-  AzkarAlsabahContent(
-    id: 17,
-    iteration: 1,
-    azt: ast17,
-    azc: asc17,
-    azf: asf17,
-  ),
-
-  AzkarAlsabahContent(
-    id: 18,
-    iteration: 3,
-    azt: ast18,
-    azc: asc18,
-    azf: asf18,
-  ),
-
-  AzkarAlsabahContent(
-    id: 19,
-    iteration: 1,
-    azt: ast19,
-    azc: asc19,
-    azf: asf19,
-  ),
-
-  AzkarAlsabahContent(
-    id: 20,
-    iteration: 1,
-    azt: ast20,
-    azc: asc20,
-    azf: asf20,
-  ),
-
-  AzkarAlsabahContent(
-    id: 21,
-    iteration: 3,
-    azt: ast21,
-    azc: asc21,
-    azf: asf21,
-  ),
-
-  AzkarAlsabahContent(
-    id: 22,
-    iteration: 10,
-    azt: ast22,
-    azc: asc22,
-    azf: asf22,
-  ),
-
-  AzkarAlsabahContent(
-    id: 23,
-    iteration: 3,
-    azt: ast23,
-    azc: asc23,
-    azf: asf23,
-  ),
-
-  AzkarAlsabahContent(
-    id: 24,
-    iteration: 3,
-    azt: ast24,
-    azc: asc24,
-    azf: asf24,
-  ),
-
-  AzkarAlsabahContent(
-    id: 25,
-    iteration: 3,
-    azt: ast25,
-    azc: asc25,
-    azf: asf25,
-  ),
-
-  AzkarAlsabahContent(
-    id: 26,
-    iteration: 3,
-    azt: ast26,
-    azc: asc26,
-    azf: asf26,
-  ),
-
-  AzkarAlsabahContent(
-    id: 27,
-    iteration: 1,
-    azt: ast27,
-    azc: asc27,
-    azf: asf27,
-  ),
-
-  AzkarAlsabahContent(
-    id: 28,
-    iteration: 1,
-    azt: ast28,
-    azc: asc28,
-    azf: asf28,
-  ),
-
-  AzkarAlsabahContent(
-    id: 29,
-    iteration: 100,
-    azt: ast29,
-    azc: asc29,
-    azf: asf29,
-  ),
-
-  AzkarAlsabahContent(
-    id: 30,
-    iteration: 100,
-    azt: ast30,
-    azc: asc30,
-    azf: asf30,
-  ),
-
-  AzkarAlsabahContent(
-    id: 31,
-    iteration: 100,
-    azt: ast31,
-    azc: asc31,
-    azf: asf31,
-  ),
-
-];
+import '../strings.dart';
 
 class AzkarAlSabah extends StatelessWidget {
+  final List<ZikerContent> _azkarAlsabah = [
+    ZikerContent(
+      id: 1,
+      numberOfRepetition: 1,
+      zt: ast1,
+      zc: asc1,
+      zf: asf1,
+    ),
+    ZikerContent(
+      id: 2,
+      numberOfRepetition: 3,
+      zt: ast2,
+      zc: asc2,
+      zf: asf2,
+    ),
+    ZikerContent(
+      id: 3,
+      numberOfRepetition: 3,
+      zt: ast3,
+      zc: asc3,
+      zf: asf3,
+    ),
+    ZikerContent(
+      id: 4,
+      numberOfRepetition: 3,
+      zt: ast4,
+      zc: asc4,
+      zf: asf4,
+    ),
+    ZikerContent(
+      id: 5,
+      numberOfRepetition: 1,
+      zt: ast5,
+      zc: asc5,
+      zf: asf5,
+    ),
+    ZikerContent(
+      id: 6,
+      numberOfRepetition: 1,
+      zt: ast6,
+      zc: asc6,
+      zf: asf6,
+    ),
+    ZikerContent(
+      id: 7,
+      numberOfRepetition: 3,
+      zt: ast7,
+      zc: asc7,
+      zf: asf7,
+    ),
+    ZikerContent(
+      id: 8,
+      numberOfRepetition: 4,
+      zt: ast8,
+      zc: asc8,
+      zf: asf8,
+    ),
+    ZikerContent(
+      id: 9,
+      numberOfRepetition: 1,
+      zt: ast9,
+      zc: asc9,
+      zf: asf9,
+    ),
+    ZikerContent(
+      id: 10,
+      numberOfRepetition: 7,
+      zt: ast10,
+      zc: asc10,
+      zf: asf10,
+    ),
+    ZikerContent(
+      id: 11,
+      numberOfRepetition: 3,
+      zt: ast11,
+      zc: asc11,
+      zf: asf11,
+    ),
+    ZikerContent(
+      id: 12,
+      numberOfRepetition: 1,
+      zt: ast12,
+      zc: asc12,
+      zf: asf12,
+    ),
+    ZikerContent(
+      id: 13,
+      numberOfRepetition: 1,
+      zt: ast13,
+      zc: asc13,
+      zf: asf13,
+    ),
+    ZikerContent(
+      id: 14,
+      numberOfRepetition: 3,
+      zt: ast14,
+      zc: asc14,
+      zf: asf14,
+    ),
+    ZikerContent(
+      id: 15,
+      numberOfRepetition: 3,
+      zt: ast15,
+      zc: asc15,
+      zf: asf15,
+    ),
+    ZikerContent(
+      id: 16,
+      numberOfRepetition: 3,
+      zt: ast16,
+      zc: asc16,
+      zf: asf16,
+    ),
+    ZikerContent(
+      id: 17,
+      numberOfRepetition: 1,
+      zt: ast17,
+      zc: asc17,
+      zf: asf17,
+    ),
+    ZikerContent(
+      id: 18,
+      numberOfRepetition: 3,
+      zt: ast18,
+      zc: asc18,
+      zf: asf18,
+    ),
+    ZikerContent(
+      id: 19,
+      numberOfRepetition: 1,
+      zt: ast19,
+      zc: asc19,
+      zf: asf19,
+    ),
+    ZikerContent(
+      id: 20,
+      numberOfRepetition: 1,
+      zt: ast20,
+      zc: asc20,
+      zf: asf20,
+    ),
+    ZikerContent(
+      id: 21,
+      numberOfRepetition: 3,
+      zt: ast21,
+      zc: asc21,
+      zf: asf21,
+    ),
+    ZikerContent(
+      id: 22,
+      numberOfRepetition: 10,
+      zt: ast22,
+      zc: asc22,
+      zf: asf22,
+    ),
+    ZikerContent(
+      id: 23,
+      numberOfRepetition: 3,
+      zt: ast23,
+      zc: asc23,
+      zf: asf23,
+    ),
+    ZikerContent(
+      id: 24,
+      numberOfRepetition: 3,
+      zt: ast24,
+      zc: asc24,
+      zf: asf24,
+    ),
+    ZikerContent(
+      id: 25,
+      numberOfRepetition: 3,
+      zt: ast25,
+      zc: asc25,
+      zf: asf25,
+    ),
+    ZikerContent(
+      id: 26,
+      numberOfRepetition: 3,
+      zt: ast26,
+      zc: asc26,
+      zf: asf26,
+    ),
+    ZikerContent(
+      id: 27,
+      numberOfRepetition: 1,
+      zt: ast27,
+      zc: asc27,
+      zf: asf27,
+    ),
+    ZikerContent(
+      id: 28,
+      numberOfRepetition: 1,
+      zt: ast28,
+      zc: asc28,
+      zf: asf28,
+    ),
+    ZikerContent(
+      id: 29,
+      numberOfRepetition: 100,
+      zt: ast29,
+      zc: asc29,
+      zf: asf29,
+    ),
+    ZikerContent(
+      id: 30,
+      numberOfRepetition: 100,
+      zt: ast30,
+      zc: asc30,
+      zf: asf30,
+    ),
+    ZikerContent(
+      id: 31,
+      numberOfRepetition: 100,
+      zt: ast31,
+      zc: asc31,
+      zf: asf31,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MenuPage(
       title: ksAzkarAlSabah,
-      child: GetAzkar(
-        gotAzkar: azkarAlsabahContent,
-        numberOfAzkar: azkarAlsabahContent.length,
+      child: AzkarGenerator(
+        azkarList: _azkarAlsabah,
       ),
     );
   }

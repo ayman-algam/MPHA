@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import '../colors.dart';
+import 'package:mpha/assets.dart';
 
 class OAnimatedImageTextButton extends StatefulWidget {
-
   OAnimatedImageTextButton(
       {this.targetedScreen, this.buttonImage, this.buttonText});
 
@@ -19,7 +17,6 @@ class OAnimatedImageTextButton extends StatefulWidget {
 }
 
 class _OAnimatedImageTextButtonState extends State<OAnimatedImageTextButton> {
-
   bool isPressed = false;
 
   @override
@@ -32,7 +29,6 @@ class _OAnimatedImageTextButtonState extends State<OAnimatedImageTextButton> {
             isPressed = false;
             Navigator.pushNamed(context, widget.targetedScreen);
           });
-
         });
       },
       child: AnimatedContainer(
@@ -65,7 +61,6 @@ class _OAnimatedImageTextButtonState extends State<OAnimatedImageTextButton> {
                         image: AssetImage(widget.buttonImage),
                       ),
                     ),
-
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       child: Text(
@@ -89,7 +84,6 @@ class _OAnimatedImageTextButtonState extends State<OAnimatedImageTextButton> {
 }
 
 class OAnimatedTextButton extends StatefulWidget {
-
   OAnimatedTextButton({this.targetedScreen, this.buttonText});
 
   final String targetedScreen;
@@ -100,7 +94,6 @@ class OAnimatedTextButton extends StatefulWidget {
 }
 
 class _OAnimatedTextButtonState extends State<OAnimatedTextButton> {
-
   bool isPressed = false;
 
   @override
@@ -113,7 +106,6 @@ class _OAnimatedTextButtonState extends State<OAnimatedTextButton> {
             isPressed = false;
             Navigator.pushNamed(context, widget.targetedScreen);
           });
-
         });
       },
       child: AnimatedContainer(

@@ -1,9 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:mpha/usageAssets.dart';
-
-import '../colors.dart';
+import '../assets.dart';
 import '../strings.dart';
 
 class HTCAtDay8 extends StatelessWidget {
@@ -37,7 +34,7 @@ class HTCAtDay8 extends StatelessWidget {
               OGroup(
                 number: 6,
                 buttonText: ksMSleepInMena,
-                buttonImage: "assets/images/m_ihram.png",
+                buttonImage: "assets/images/m_mena.PNG",
                 targetedScreen: 'm_sleep_in_mena',
               ),
             ],

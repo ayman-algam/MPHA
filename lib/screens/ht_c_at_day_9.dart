@@ -1,9 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'package:mpha/usageAssets.dart';
-
-import '../colors.dart';
+import '../assets.dart';
 import '../strings.dart';
 
 class HTCAtDay9 extends StatelessWidget {

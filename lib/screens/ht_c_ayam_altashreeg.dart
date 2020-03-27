@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../strings.dart';
 
-class HTCAtDay10 extends StatelessWidget {
+class HTCAyamAltashreeg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,7 +11,7 @@ class HTCAtDay10 extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            ksAtDay10,
+            ksAyamAltashreeg,
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -30,38 +30,20 @@ class HTCAtDay10 extends StatelessWidget {
         Expanded(
           child: ListView(
             children: <Widget>[
-              // 9 - gamrat alagaba
+              // 12 - rami algamarat al3
               OGroup(
-                number: 9,
-                buttonText: ksMGamratAlagaba,
-                buttonImage: "assets/images/m_rami_algamarat_alagaba.PNG",
-                targetedScreen: 'm_rami_gamrat_alagaba',
+                number: 13,
+                buttonText: ksRamiAlgamarat,
+                buttonImage: "assets/images/m_rami_algamarat.PNG",
+                targetedScreen: 'm_rami_algamarat',
               ),
 
               // 10 - zab alhadi
               ODivider,
               OGroup(
-                number: 10,
-                buttonImage: "assets/images/m_ransom.png",
-                buttonText: ksMRansom,
-                targetedScreen: 'm_ransom',
-              ),
-
-              // 11 - cut and shaving
-              ODivider,
-              OGroup(
-                number: 11,
-                buttonImage: "assets/images/m_cutting_and_shaving.png",
-                buttonText: ksMCutAndShaving,
-                targetedScreen: 'm_cut_and_shaving',
-              ),
-
-              // 12 - twaf al efada
-              ODivider,
-              OGroup(
-                number: 12,
+                number: 14,
                 buttonImage: "assets/images/m_tawaf.png",
-                buttonText: ksMTawafAlefada,
+                buttonText: ksMTawafAlWadaa,
                 targetedScreen: 'm_tawaf_alefada',
               )
             ],

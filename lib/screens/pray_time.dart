@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/menu_page.dart';
-import 'package:mpha/usageAssets.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
 import 'package:mpha/strings.dart';
+
+import '../assets.dart';
 
 class PrayTime extends StatefulWidget {
   @override

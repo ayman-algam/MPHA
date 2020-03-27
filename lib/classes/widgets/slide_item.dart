@@ -1,9 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mpha/usageAssets.dart';
-
-import '../colors.dart';
+import 'package:mpha/assets.dart';
 
 class SlideArea extends StatefulWidget {
   final List sl;
@@ -90,26 +88,6 @@ class _SlideAreaState extends State<SlideArea> {
           ),
         )
       ],
-    );
-  }
-}
-
-class SlideDot extends StatelessWidget {
-  bool isActive;
-
-  SlideDot(this.isActive);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 100),
-      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-      height: isActive ? 15 : 8,
-      width: isActive ? 15 : 8,
-      decoration: BoxDecoration(
-        color: isActive ? kcTextSplash : Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-      ),
     );
   }
 }

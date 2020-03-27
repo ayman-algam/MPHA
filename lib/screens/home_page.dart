@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/animated_buttom.dart';
-import 'package:mpha/classes/menu_page.dart';
+import 'package:mpha/classes/widgets/animated_buttom.dart';
+import 'package:mpha/classes/widgets/menu_page.dart';
 import 'package:mpha/strings.dart';
-import 'package:mpha/usageAssets.dart';
+
+import '../assets.dart';
 
 class HomePage extends StatefulWidget {
   @override
