@@ -1,20 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
-
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 import '../strings.dart';
 
-class MSaee extends StatefulWidget {
-  @override
-  _MSaeeState createState() => _MSaeeState();
-}
+class MSaee extends StatelessWidget {
 
-class _MSaeeState extends State<MSaee> {
+  static const routeName = 'mSaee';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksMSaee,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,23 +22,23 @@ class _MSaeeState extends State<MSaee> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMSaee
+                // todo wagibat AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksWagibatAlIhram,
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
                     )),
 
-                // todo  Sunn AlMSaee
+                // todo  Sunn AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksSunnAlIhram,
+                    child: TextButton(
+                      title: ksSunnAlIhram,
                     ))
               ],
             ),
@@ -50,16 +47,16 @@ class _MSaeeState extends State<MSaee> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMSaee
+                // todo MndobatAlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksMndobatAlIhram,
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
                     )),
 
-                // todo ksMahzorat AlMSaee
+                // todo ksMahzorat AlMCutAndShaving
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +64,8 @@ class _MSaeeState extends State<MSaee> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),

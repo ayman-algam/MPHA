@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/screens/ht_Ifraad.dart';
+import 'package:mpha/screens/ht_Qiraan.dart';
+import 'package:mpha/screens/ht_Tamattu.dart';
 import 'package:mpha/strings.dart';
-
-import '../assets.dart';
+import 'package:mpha/theme.dart';
+import 'package:mpha/widgets/custom_divider.dart';
+import 'package:mpha/widgets/main_widget.dart';
 
 enum SelectedGender { male, female }
 enum SelectedTime { before, after }
 enum SelectedHajjType { ifraad, qiraan, tamattu }
 
 class ManasicAlhajj extends StatefulWidget {
+
+  static const routName = 'manasicAlhajj';
+
   @override
   _ManasicAlhajjState createState() => _ManasicAlhajjState();
 }
 
 class _ManasicAlhajjState extends State<ManasicAlhajj> {
-
   SelectedGender selectGender;
   SelectedTime selectedTime;
   SelectedHajjType selectedHajjType;
@@ -23,22 +28,21 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
 
   final double itemHeight = 50.0;
 
-
   void gotoM() {
     switch (selectedHajjType) {
       case SelectedHajjType.ifraad:
         {
-          _targetedPage = 'ht_ifraad';
+          _targetedPage = HTIfraad.routeName;
         }
         break;
       case SelectedHajjType.qiraan:
         {
-          _targetedPage = 'ht_qiraan';
+          _targetedPage = HTQiraan.routeName;
         }
         break;
       case SelectedHajjType.tamattu:
         {
-          _targetedPage = 'ht_tamattu';
+          _targetedPage = HTTamattu.routeName;
         }
         break;
     }
@@ -48,7 +52,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
 
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksAboutHajj,
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -65,7 +69,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
             ),
           ),
 
-          ODivider,
+          CustomDivider(),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -81,7 +85,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: kcPrimaryColor,
+                          color: kColor1,
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             new BoxShadow(
@@ -108,10 +112,10 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                             ),
                             Text(
                               ksMale,
-                              style: ksTextStyle2.copyWith(
+                              style: kTextStyleButtonTitle.copyWith(
                                 color: selectGender == SelectedGender.male
                                     ? Colors.yellow
-                                    : kcTextSplash,
+                                    : kColor2,
                               ),
                             ),
                           ],
@@ -121,7 +125,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                   ),
                 ),
               ),
-              sizedBoxWidth(10),
+              SizedBox(height: 10),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -133,15 +137,14 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: kcPrimaryColor,
+                          color: kColor1,
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             new BoxShadow(
                               color: selectGender == SelectedGender.female
                                   ? Colors.yellow
                                   : Colors.black,
-                              blurRadius:
-                              selectGender == SelectedGender.female
+                              blurRadius: selectGender == SelectedGender.female
                                   ? 10
                                   : 2.0,
                             ),
@@ -161,10 +164,10 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                             ),
                             Text(
                               ksFemale,
-                              style: ksTextStyle2.copyWith(
+                              style: kTextStyleButtonTitle.copyWith(
                                 color: selectGender == SelectedGender.female
                                     ? Colors.yellow
-                                    : kcTextSplash,
+                                    : kColor2,
                               ),
                             ),
                           ],
@@ -186,7 +189,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
             ),
           ),
 
-          ODivider,
+          CustomDivider(),
 
           Row(
             children: <Widget>[
@@ -202,7 +205,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     child: Container(
                       height: 80,
                       decoration: BoxDecoration(
-                          color: kcPrimaryColor,
+                          color: kColor1,
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             new BoxShadow(
@@ -217,10 +220,11 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                         child: Text(
                           ksArafaDay,
                           textAlign: TextAlign.center,
-                          style: ksTextStyle2.copyWith(
-                              color: selectedTime == SelectedTime.after
-                                  ? Colors.yellow
-                                  : kcTextSplash),
+                          style: kTextStyleButtonTitle.copyWith(
+                            color: selectedTime == SelectedTime.after
+                                ? Colors.yellow
+                                : kColor2,
+                          ),
                         ),
                       ),
                     ),
@@ -239,25 +243,26 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     child: Container(
                       height: 80,
                       decoration: BoxDecoration(
-                          color: kcPrimaryColor,
+                          color: kColor1,
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             new BoxShadow(
                               color: selectedTime == SelectedTime.before
                                   ? Colors.yellow
                                   : Colors.black,
-                              blurRadius:
-                              selectedTime == SelectedTime.before ? 10 : 2.0,
+                              blurRadius: selectedTime == SelectedTime.before
+                                  ? 10
+                                  : 2.0,
                             ),
                           ]),
                       child: Center(
                         child: Text(
                           ksBefore8ZoElhejja,
                           textAlign: TextAlign.center,
-                          style: ksTextStyle2.copyWith(
+                          style: kTextStyleButtonTitle.copyWith(
                             color: selectedTime == SelectedTime.before
                                 ? Colors.yellow
-                                : kcTextSplash,
+                                : kColor2,
                           ),
                         ),
                       ),
@@ -277,7 +282,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
             ),
           ),
 
-          ODivider,
+          CustomDivider(),
 
           Row(
             children: <Widget>[
@@ -293,15 +298,15 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     child: Container(
                       height: itemHeight,
                       decoration: BoxDecoration(
-                        color: kcPrimaryColor,
+                        color: kColor1,
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: [
                           new BoxShadow(
                             color: selectedHajjType == SelectedHajjType.ifraad
                                 ? Colors.yellow
                                 : Colors.black,
-                            blurRadius: selectedHajjType ==
-                                SelectedHajjType.ifraad
+                            blurRadius:
+                            selectedHajjType == SelectedHajjType.ifraad
                                 ? 10
                                 : 2.0,
                           ),
@@ -310,10 +315,10 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                       child: Center(
                         child: Text(
                           ksHajjEfrad,
-                          style: ksTextStyle2.copyWith(
+                          style: kTextStyleButtonTitle.copyWith(
                             color: selectedHajjType == SelectedHajjType.ifraad
                                 ? Colors.yellow
-                                : kcTextSplash,
+                                : kColor2,
                           ),
                         ),
                       ),
@@ -333,15 +338,15 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                     child: Container(
                       height: itemHeight,
                       decoration: BoxDecoration(
-                        color: kcPrimaryColor,
+                        color: kColor1,
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: [
                           new BoxShadow(
                             color: selectedHajjType == SelectedHajjType.qiraan
                                 ? Colors.yellow
                                 : Colors.black,
-                            blurRadius: selectedHajjType ==
-                                SelectedHajjType.qiraan
+                            blurRadius:
+                            selectedHajjType == SelectedHajjType.qiraan
                                 ? 10
                                 : 2.0,
                           ),
@@ -350,10 +355,10 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                       child: Center(
                         child: Text(
                           ksHajjAlQiran,
-                          style: ksTextStyle2.copyWith(
+                          style: kTextStyleButtonTitle.copyWith(
                             color: selectedHajjType == SelectedHajjType.qiraan
                                 ? Colors.yellow
-                                : kcTextSplash,
+                                : kColor2,
                           ),
                         ),
                       ),
@@ -375,7 +380,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
               child: Container(
                 height: itemHeight,
                 decoration: BoxDecoration(
-                  color: kcPrimaryColor,
+                  color: kColor1,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     new BoxShadow(
@@ -391,10 +396,10 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                 child: Center(
                   child: Text(
                     ksHajjAltamattu,
-                    style: ksTextStyle2.copyWith(
+                    style: kTextStyleButtonTitle.copyWith(
                       color: selectedHajjType == SelectedHajjType.tamattu
                           ? Colors.yellow
-                          : kcTextSplash,
+                          : kColor2,
                     ),
                   ),
                 ),
@@ -402,7 +407,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
             ),
           ),
 
-          ODivider,
+          CustomDivider(),
 
           GestureDetector(
             onTap: gotoM,
@@ -411,7 +416,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
               child: Container(
                 height: itemHeight + 10,
                 decoration: BoxDecoration(
-                  color: kcTextSplash,
+                  color: kColor2,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     new BoxShadow(
@@ -423,8 +428,8 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
                 child: Center(
                   child: Text(
                     ksSave,
-                    style: ksTextStyle2.copyWith(
-                      color: kcPrimaryColor,
+                    style: kTextStyleButtonTitle.copyWith(
+                      color: kColor1,
                     ),
                   ),
                 ),
@@ -440,7 +445,7 @@ class _ManasicAlhajjState extends State<ManasicAlhajj> {
 final myTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 22.0,
-  color: kcTextSplash,
+  color: kColor2,
 );
 
 final myTextStyle2 = TextStyle(

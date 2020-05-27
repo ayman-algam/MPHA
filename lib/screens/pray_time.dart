@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/theme.dart';
+import 'package:mpha/widgets/main_widget.dart';
 import 'package:mpha/strings.dart';
 
-import '../assets.dart';
+class PrayTime extends StatelessWidget {
 
-class PrayTime extends StatefulWidget {
-  @override
-  _PrayTimeState createState() => _PrayTimeState();
-}
+  static const routeName = 'prayTime';
 
-class _PrayTimeState extends State<PrayTime> {
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksPrayTime,
       child: Center(
         child: Text(
           ksPrayTime,
-          style: ksTextStyle2,
+          style: kTextStyleNormal,
         ),
       ),
     );

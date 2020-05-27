@@ -1,21 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
-
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 import '../strings.dart';
 
-class MRansom extends StatefulWidget {
-  @override
-  _MRansomState createState() => _MRansomState();
-}
+class MRansom extends StatelessWidget {
+  static const routeName = 'mRansom';
 
-class _MRansomState extends State<MRansom> {
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
-      title: ksMRansom,
+    return MainWidget(
+      title: ksMCutAndShaving,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -25,24 +21,24 @@ class _MRansomState extends State<MRansom> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMRansom
+                // todo wagibat AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksWagibatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
+                    )),
 
-                // todo  Sunn AlMRansom
+                // todo  Sunn AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksSunnAlIhram,
-                ))
+                    child: TextButton(
+                      title: ksSunnAlIhram,
+                    ))
               ],
             ),
           ),
@@ -50,16 +46,16 @@ class _MRansomState extends State<MRansom> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMRansom
+                // todo MndobatAlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksMndobatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
+                    )),
 
-                // todo ksMahzorat AlMRansom
+                // todo ksMahzorat AlMCutAndShaving
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +63,8 @@ class _MRansomState extends State<MRansom> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),

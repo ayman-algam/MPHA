@@ -1,20 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 
 import '../strings.dart';
 
-class MCutAndShaving extends StatefulWidget {
-  @override
-  _MCutAndShavingState createState() => _MCutAndShavingState();
-}
+class MCutAndShaving extends StatelessWidget {
 
-class _MCutAndShavingState extends State<MCutAndShaving> {
+  static const routeName = 'mCutAndShaving';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksMCutAndShaving,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,8 +23,8 @@ class _MCutAndShavingState extends State<MCutAndShaving> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
@@ -34,14 +32,14 @@ class _MCutAndShavingState extends State<MCutAndShaving> {
               children: <Widget>[
                 // todo wagibat AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksWagibatAlIhram,
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
                     )),
 
                 // todo  Sunn AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksSunnAlIhram,
+                    child: TextButton(
+                      title: ksSunnAlIhram,
                     ))
               ],
             ),
@@ -52,14 +50,14 @@ class _MCutAndShavingState extends State<MCutAndShaving> {
               children: <Widget>[
                 // todo MndobatAlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksMndobatAlIhram,
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
                     )),
 
                 // todo ksMahzorat AlMCutAndShaving
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +65,8 @@ class _MCutAndShavingState extends State<MCutAndShaving> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),

@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/theme.dart';
+import 'package:mpha/widgets/main_widget.dart';
 import 'package:mpha/strings.dart';
 
-import '../assets.dart';
-
-class HTQiraan extends StatefulWidget {
+class HTQiraan extends StatelessWidget {
+  static const routeName = 'hTQiraan';
   @override
-  _HTQiraanState createState() => _HTQiraanState();
-}
 
-class _HTQiraanState extends State<HTQiraan> {
-  @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksHajjAlQiran,
       child: Center(
         child: Text(
           ksHajjAlQiran,
-          style: ksTextStyle2,
+          style: kTextStyleNormal,
         ),
       ),
     );

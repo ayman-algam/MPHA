@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/strings.dart';
+import 'package:mpha/widgets/main_widget.dart';
 
-class TestPlace extends StatefulWidget {
-  @override
-  _TestPlaceState createState() => _TestPlaceState();
-}
-
-class _TestPlaceState extends State<TestPlace> {
+class TestPlace extends StatelessWidget {
+  static const routeName = 'testPlace';
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
-      title: ksHajjEfrad,
-      child: Container(
-        color: Colors.teal,
-      ),
+    return MainWidget(
+      title: 'Test Place',
+      child: null,
     );
   }
 }

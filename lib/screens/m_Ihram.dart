@@ -1,21 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 
 import '../strings.dart';
 
-class MIhram extends StatefulWidget {
-  @override
-  _MIhramState createState() => _MIhramState();
-}
+class MIhram extends StatelessWidget {
 
-class _MIhramState extends State<MIhram> {
+  static const routeName = 'mIhram';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
-      title: ksMIhram,
+    return MainWidget(
+      title: ksMCutAndShaving,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -25,24 +23,24 @@ class _MIhramState extends State<MIhram> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMIhram
+                // todo wagibat AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksWagibatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
+                    )),
 
-                // todo  Sunn AlMIhram
+                // todo  Sunn AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksSunnAlIhram,
-                ))
+                    child: TextButton(
+                      title: ksSunnAlIhram,
+                    ))
               ],
             ),
           ),
@@ -50,16 +48,16 @@ class _MIhramState extends State<MIhram> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMIhram
+                // todo MndobatAlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksMndobatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
+                    )),
 
-                // todo ksMahzorat AlMIhram
+                // todo ksMahzorat AlMCutAndShaving
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +65,8 @@ class _MIhramState extends State<MIhram> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),

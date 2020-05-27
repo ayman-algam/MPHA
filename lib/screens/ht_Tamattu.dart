@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/assets.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/widgets/main_widget.dart';
 import 'package:mpha/strings.dart';
 
-class HTTamattu extends StatefulWidget {
-  @override
-  _HTTamattuState createState() => _HTTamattuState();
-}
+import '../theme.dart';
 
-class _HTTamattuState extends State<HTTamattu> {
+class HTTamattu extends StatelessWidget {
+  static const routeName = 'hTTamattu';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksHajjAltamattu,
       child: Center(
         child: Text(
           ksHajjAltamattu,
-          style: ksTextStyle2,
+          style: kTextStyleNormal,
         ),
       ),
     );

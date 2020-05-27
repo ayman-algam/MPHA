@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:mpha/assets.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/theme.dart';
+import 'package:mpha/widgets/main_widget.dart';
 import 'package:mpha/strings.dart';
 
-class AdabAlZiarah extends StatefulWidget {
-  @override
-  _AdabAlZiarahState createState() => _AdabAlZiarahState();
-}
+class AdabAlZiarah extends StatelessWidget {
 
-class _AdabAlZiarahState extends State<AdabAlZiarah> {
+  static const routeName = 'adabAlZiarah';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksHajjEfrad,
       child: Center(
         child: Text(
           ksHajjEfrad,
-          style: ksTextStyle2,
+          style: kTextStyleNormal,
         ),
       ),
     );

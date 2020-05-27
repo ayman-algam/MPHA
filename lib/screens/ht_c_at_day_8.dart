@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mpha/screens/m_sleep_in_mena.dart';
+import 'package:mpha/theme.dart';
+import 'package:mpha/widgets/groupe.dart';
 
-import '../assets.dart';
 import '../strings.dart';
 
 class HTCAtDay8 extends StatelessWidget {
@@ -13,10 +15,7 @@ class HTCAtDay8 extends StatelessWidget {
           child: Text(
             ksAtDay8,
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22.0,
-                color: kcTextSplash),
+            style: kTextStyleAppBarTitle,
           ),
         ),
         Padding(
@@ -24,18 +23,18 @@ class HTCAtDay8 extends StatelessWidget {
               top: 10.0, bottom: 20.0, left: 50.0, right: 50.0),
           child: Divider(
             thickness: 4.0,
-            color: kcTextSplash,
+            color: kColor2,
           ),
         ),
         Expanded(
           child: ListView(
             children: <Widget>[
               // 1 - ihram
-              OGroup(
+              Group(
                 number: 6,
                 buttonText: ksMSleepInMena,
                 buttonImage: "assets/images/m_mena.PNG",
-                targetedScreen: 'm_sleep_in_mena',
+                targetedScreen: MSleepInMena.routeName,
               ),
             ],
           ),

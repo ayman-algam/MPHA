@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/models/ziker_content.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/ziker_generator.dart';
+import 'package:mpha/models/ziker_content.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/ziker_generator.dart';
 
 import '../strings.dart';
 
 class AzkarAlSabah extends StatelessWidget {
+
+  static const routeName = 'azkarAlsabah';
+
   final List<ZikerContent> _azkarAlsabah = [
     ZikerContent(
       id: 1,
@@ -228,7 +231,7 @@ class AzkarAlSabah extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksAzkarAlSabah,
       child: AzkarGenerator(
         azkarList: _azkarAlsabah,

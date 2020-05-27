@@ -1,11 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import '../assets.dart';
+import 'package:mpha/screens/home_page.dart';
+import 'package:mpha/theme.dart';
 
 
 class SplashScreen extends StatefulWidget {
+
+  static const routeName = 'splashScreen';
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -16,13 +19,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 3), ()=> Navigator.pushNamed(context, 'homePage'),);
+    Timer(Duration(seconds: 5), () =>
+        Navigator.pushNamed(context, HomePage.routeName),);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kcPrimaryColor,
+      backgroundColor: kColor1,
       body: Center(
         child: Column(
           children: <Widget>[
@@ -30,10 +34,14 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image(
-                    image: AssetImage("assets/images/main_icon.png"),
+                  Container(
+                    height: 200.0,
+                    width: 200.0,
+                    child: Image(
+                      image: AssetImage('assets/images/icon.png'),
+                    ),
                   ),
-                  sizedBoxHeight(10),
+                  SizedBox(height: 10),
                   Text(
                     'MPHA',
                     style: TextStyle(
@@ -43,14 +51,14 @@ class _SplashScreenState extends State<SplashScreen> {
                       color: Color(0xFFf3eab7),
                     ),
                   ),
-                  sizedBoxHeight(10),
+                  SizedBox(height: 10),
                   Text(
                     'FMS',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0,
                       fontFamily: 'SourceSansPro',
-                      color: kcTextSplash,
+                      color: kColor2,
                       letterSpacing: 2.0,
                     ),
                   ),
@@ -65,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: 25.0,
                   fontFamily: 'Pacifico',
-                  color: kcTextSplash,
+                  color: kColor2,
                 ),
               ),
             ),

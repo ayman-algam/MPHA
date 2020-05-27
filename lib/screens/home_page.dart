@@ -1,75 +1,91 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/screens/ht_Ifraad.dart';
+import 'package:mpha/widgets/bordered_container.dart';
+import 'package:mpha/widgets/image_text_button.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/screens/azkar_mostahaba.dart';
 import 'package:mpha/strings.dart';
 
-import '../assets.dart';
+class HomePage extends StatelessWidget {
+  static const routeName = 'hamePage';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    // to control view in case rotation of devise
+    final isLandScape =
+        MediaQuery
+            .of(context)
+            .orientation == Orientation.landscape;
+
+    return MainWidget(
       title: ksHomePage,
-      child: Column(
+      child: isLandScape
+          ? Row(
         children: <Widget>[
-          Expanded(
-            flex: 4,
-            child: OCardView(),
+          Container(
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * .5,
+            child: BorderedContainer(),
           ),
-          Expanded(
-            flex: 3,
-            child: Row(
-              children: <Widget>[
-                // todo Manasic AlHajj
-                Expanded(
-                    child: OAnimatedImageTextButton(
-                      buttonText: ksManasicAlhajj,
-                      buttonImage: "assets/images/manasic_alhajj.png",
-                      targetedScreen: 'manasic_alhajj',
-                    )
-                ),
-
-                // todo  Manasic AlOmrah
-                Expanded(
-                  child: OAnimatedImageTextButton(
-                    buttonText: ksManasicAlOmrah,
-                    buttonImage: "assets/images/kaba.PNG",
-                    targetedScreen: "manasic_alomrah",
-                  ),
-                )
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Row(
-              children: <Widget>[
-                // todo Adab AlZiarah
-                Expanded(
-                  child: OAnimatedImageTextButton(
-                    buttonText: ksAdabAlZiarah,
-                    buttonImage: "assets/images/adab_alzeiara.png",
-                    targetedScreen: "adab_alziarah",
-                  ),
-                ),
-
-                // todo Azkar Mostahaba
-                Expanded(
-                  child: OAnimatedImageTextButton(
-                    buttonText: ksAzkarMostahaba,
-                    buttonImage: "assets/images/doaa.png",
-                    targetedScreen: "azkar_mostahaba",
-                  ),
-                ),
-              ],
-            ),
-          ),
+          buildExpandedGridVew(isLandScape),
         ],
+      )
+          : Column(
+        children: <Widget>[
+          Container(
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * .4,
+            child: BorderedContainer(),
+          ),
+          buildExpandedGridVew(isLandScape)
+        ],
+      ),
+    );
+  }
+
+  Expanded buildExpandedGridVew(bool isLanScape) {
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ImageTextButton(
+                    title: ksManasicAlhajj,
+                    imageUrl: 'assets/images/manasic_alhajj.png',
+                    targetedScreen: HTIfraad.routeName,
+                    type: 1,
+                    isLanScape: isLanScape),
+                ImageTextButton(
+                    title: ksManasicAlOmrah,
+                    imageUrl: 'assets/images/kaba.PNG',
+                    targetedScreen: '',
+                    type: 1,
+                    isLanScape: isLanScape),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                ImageTextButton(
+                    title: ksAdabAlZiarah,
+                    imageUrl: 'assets/images/adab_alzeiara.png',
+                    targetedScreen: '',
+                    type: 1,
+                    isLanScape: isLanScape),
+                ImageTextButton(
+                    title: ksAzkarMostahaba,
+                    imageUrl: 'assets/images/doaa.png',
+                    targetedScreen: AzkarMostahaba.routeName,
+                    type: 1,
+                    isLanScape: isLanScape),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

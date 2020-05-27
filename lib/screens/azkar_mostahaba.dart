@@ -1,69 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
+import 'package:mpha/screens/azkar_after_prayer.dart';
+import 'package:mpha/screens/azkar_almasa.dart';
+import 'package:mpha/screens/azkar_alsabah.dart';
 import 'package:mpha/strings.dart';
+import 'package:mpha/widgets/image_text_button.dart';
+import 'package:mpha/widgets/main_widget.dart';
 
-class AzkarMostahaba extends StatefulWidget {
-  @override
-  _AzkarMostahabaState createState() => _AzkarMostahabaState();
-}
+class AzkarMostahaba extends StatelessWidget {
 
-class _AzkarMostahabaState extends State<AzkarMostahaba> {
+  static const routeName = 'azkarMostahaba';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    final isLandScape =
+        MediaQuery
+            .of(context)
+            .orientation == Orientation.landscape;
+
+    return MainWidget(
       title: ksAzkarMostahaba,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
               child: Row(
-            children: <Widget>[
-              Expanded(
-                // todo Azkar AlSabah
-                child: OAnimatedImageTextButton(
-                  buttonText: ksAzkarAlSabah,
-                  buttonImage: "assets/images/azkar_elsabah.PNG",
-                  targetedScreen: "azkar_alsabah",
-                ),
-              ),
-              Expanded(
-                // todo Azkar AlMasa
-                child: OAnimatedImageTextButton(
-                  buttonText: ksAzkarAlMasa,
-                  buttonImage: "assets/images/azkar_elmasa.PNG",
-                  targetedScreen: "azkar_almasa",
-                ),
-              ),
-            ],
-          )),
+                children: <Widget>[
+                  Expanded(
+                    // todo Azkar AlSabah
+                    child: ImageTextButton(
+                      title: ksAzkarAlSabah,
+                      imageUrl: "assets/images/evening_icon.PNG",
+                      targetedScreen: AzkarAlSabah.routeName,
+                      type: 2,
+                      isLanScape: isLandScape,
+                    ),
+                  ),
+                  Expanded(
+                    // todo Azkar AlMasa
+                    child: ImageTextButton(
+                      title: ksAzkarAlMasa,
+                      imageUrl: "assets/images/morning_icon.PNG",
+                      targetedScreen: AzkarAlmasa.routeName,
+                      type: 2,
+                      isLanScape: isLandScape,
+                    ),
+                  ),
+                ],
+              )),
           Expanded(
-              child: OAnimatedImageTextButton(
-                buttonText: ksAzkarBaadAlSalah,
-                buttonImage: "assets/images/azkar_after_prayer.png",
-                targetedScreen: "",
+              child: ImageTextButton(
+                title: ksAzkarBaadAlSalah,
+                imageUrl: "assets/images/azkar_after_prayer.png",
+                targetedScreen: AzkarAfterPrayer.routeName,
+                type: 2,
+                isLanScape: isLandScape,
               )),
           Expanded(
               child: Row(
-            children: <Widget>[
-              Expanded(
-                // todo Quran
-                child: OAnimatedImageTextButton(
-                  buttonText: ksQuran,
-                  buttonImage: "assets/images/quran.png",
-                  targetedScreen: "",
-                ),
-              ),
-              Expanded(
-                // todo Sebha
-                child: OAnimatedImageTextButton(
-                  buttonText: ksSebha,
-                  buttonImage: "assets/images/sebha.png",
-                  targetedScreen: "",
-                ),
-              ),
-            ],
-          )),
+                children: <Widget>[
+                  Expanded(
+                    // todo Quran
+                    child: ImageTextButton(
+                      title: ksQuran,
+                      imageUrl: "assets/images/quran.png",
+                      targetedScreen: "",
+                      type: 2,
+                      isLanScape: isLandScape,
+                    ),
+                  ),
+                  Expanded(
+                    // todo Sebha
+                    child: ImageTextButton(
+                      title: ksSebha,
+                      imageUrl: "assets/images/sebha.png",
+                      targetedScreen: "",
+                      type: 2,
+                      isLanScape: isLandScape,
+                    ),
+                  ),
+                ],
+              )),
         ],
       ),
     );

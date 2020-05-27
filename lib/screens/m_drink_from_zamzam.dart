@@ -1,21 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 
 import '../strings.dart';
 
-class MDrinkFromZamzam extends StatefulWidget {
-  @override
-  _MDrinkFromZamzamState createState() => _MDrinkFromZamzamState();
-}
+class MDrinkFromZamzam extends StatelessWidget {
 
-class _MDrinkFromZamzamState extends State<MDrinkFromZamzam> {
+  static const routeName = 'mDrinkFromZamzam';
+
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
-      title: ksZmzm,
+    return MainWidget(
+      title: ksMCutAndShaving,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -25,24 +23,24 @@ class _MDrinkFromZamzamState extends State<MDrinkFromZamzam> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo wagibat AlMDrinkFromZamzam
+                // todo wagibat AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksWagibatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
+                    )),
 
-                // todo  Sunn AlMDrinkFromZamzam
+                // todo  Sunn AlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksSunnAlIhram,
-                ))
+                    child: TextButton(
+                      title: ksSunnAlIhram,
+                    ))
               ],
             ),
           ),
@@ -50,16 +48,16 @@ class _MDrinkFromZamzamState extends State<MDrinkFromZamzam> {
             flex: 2,
             child: Row(
               children: <Widget>[
-                // todo MndobatAlMDrinkFromZamzam
+                // todo MndobatAlMCutAndShaving
                 Expanded(
-                    child: OAnimatedTextButton(
-                  buttonText: ksMndobatAlIhram,
-                )),
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
+                    )),
 
-                // todo ksMahzorat AlMDrinkFromZamzam
+                // todo ksMahzorat AlMCutAndShaving
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +65,8 @@ class _MDrinkFromZamzamState extends State<MDrinkFromZamzam> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),

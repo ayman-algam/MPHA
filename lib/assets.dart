@@ -1,45 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'classes/widgets/animated_buttom.dart';
-
-const Color kcTextSplash = Color(0xFFf3eab7);
-const Color kcPrimaryColor = Color(0xFF5B5C5E);
-
-Widget sizedBoxHeight(int heightValue) {
-  return SizedBox(
-    height: heightValue.toDouble(),
-  );
-}
-
-Widget sizedBoxWidth(int widthValue) {
-  return SizedBox(
-    width: widthValue.toDouble(),
-  );
-}
-
-final ksTextStyle1 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 30.0,
-    fontFamily: 'Pacifico',
-    color: Color(0xFFf3eab7));
-
-final ksTextStyle2 = TextStyle(
-  fontWeight: FontWeight.bold,
-  fontSize: 20.0,
-  fontFamily: 'SourceSansPro',
-  color: kcTextSplash,
-  letterSpacing: 2.0,
-);
-
-final ksTextStyle3 = TextStyle(
-  fontWeight: FontWeight.bold,
-  fontSize: 24.0,
-  fontFamily: 'SourceSansPro',
-  color: kcTextSplash,
-  letterSpacing: 1.0,
-);
+import 'theme.dart';
 
 class OCardView extends StatelessWidget {
   OCardView({this.child});
@@ -52,7 +13,7 @@ class OCardView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-            color: kcPrimaryColor,
+            color: kColor1,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               new BoxShadow(
@@ -61,81 +22,6 @@ class OCardView extends StatelessWidget {
               ),
             ]),
         child: child,
-      ),
-    );
-  }
-}
-
-class OGroup extends StatelessWidget {
-  OGroup({this.number, this.targetedScreen, this.buttonImage, this.buttonText});
-
-  final int number;
-  final String targetedScreen;
-  final String buttonImage;
-  final String buttonText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        Container(
-          height: 72.0,
-          width: 72.0,
-          child: Stack(
-            children: <Widget>[
-              Icon(
-                FontAwesomeIcons.circle,
-                size: 70.0,
-                color: kcTextSplash,
-              ),
-              Center(
-                child: Text(
-                  "$number",
-                  style: TextStyle(color: kcTextSplash),
-                ),
-              )
-            ],
-          ),
-        ),
-        Container(
-          height: 170.0,
-          width: 150.0,
-          child: OAnimatedImageTextButton(
-            buttonImage: buttonImage,
-            targetedScreen: targetedScreen,
-            buttonText: buttonText,
-          ),
-        )
-      ],
-    );
-  }
-}
-
-Widget ODivider = Padding(
-  padding: const EdgeInsets.all(8.0),
-  child: Divider(
-    height: 1.0,
-    color: kcTextSplash,
-  ),
-);
-
-class SlideDot extends StatelessWidget {
-  bool isActive;
-
-  SlideDot(this.isActive);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 100),
-      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-      height: isActive ? 15 : 8,
-      width: isActive ? 15 : 8,
-      decoration: BoxDecoration(
-        color: isActive ? kcTextSplash : Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
   }

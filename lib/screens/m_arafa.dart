@@ -1,20 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mpha/classes/widgets/animated_buttom.dart';
-import 'package:mpha/classes/widgets/menu_page.dart';
-import 'package:mpha/classes/widgets/slide_item.dart';
+import 'package:mpha/widgets/main_widget.dart';
+import 'package:mpha/widgets/slide_item.dart';
+import 'package:mpha/widgets/text_button.dart';
 
 import '../strings.dart';
 
-class MArafa extends StatefulWidget {
-  @override
-  _MArafaState createState() => _MArafaState();
-}
+class MArafa extends StatelessWidget {
+  static const routeName = 'mArafa';
 
-class _MArafaState extends State<MArafa> {
   @override
   Widget build(BuildContext context) {
-    return MenuPage(
+    return MainWidget(
       title: ksMArafa,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,8 +22,8 @@ class _MArafaState extends State<MArafa> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksBefore,
+              child: TextButton(
+                title: ksBefore,
               )),
           Expanded(
             flex: 2,
@@ -34,14 +31,14 @@ class _MArafaState extends State<MArafa> {
               children: <Widget>[
                 // todo wagibat AlMArafa
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksWagibatAlIhram,
+                    child: TextButton(
+                      title: ksWagibatAlIhram,
                     )),
 
                 // todo  Sunn AlMArafa
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksSunnAlIhram,
+                    child: TextButton(
+                      title: ksSunnAlIhram,
                     ))
               ],
             ),
@@ -52,14 +49,14 @@ class _MArafaState extends State<MArafa> {
               children: <Widget>[
                 // todo MndobatAlMArafa
                 Expanded(
-                    child: OAnimatedTextButton(
-                      buttonText: ksMndobatAlIhram,
+                    child: TextButton(
+                      title: ksMndobatAlIhram,
                     )),
 
                 // todo ksMahzorat AlMArafa
                 Expanded(
-                  child: OAnimatedTextButton(
-                    buttonText: ksMahzoratAlIhram,
+                  child: TextButton(
+                    title: ksMahzoratAlIhram,
                   ),
                 ),
               ],
@@ -67,8 +64,8 @@ class _MArafaState extends State<MArafa> {
           ),
           Expanded(
               flex: 1,
-              child: OAnimatedTextButton(
-                buttonText: ksVedios,
+              child: TextButton(
+                title: ksVedios,
               )),
         ],
       ),
