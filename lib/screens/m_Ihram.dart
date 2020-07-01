@@ -13,7 +13,7 @@ class MIhram extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainWidget(
-      title: ksMCutAndShaving,
+      title: ksMIhram,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

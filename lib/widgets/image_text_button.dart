@@ -59,7 +59,7 @@ class ImageTextButton extends StatelessWidget {
                   child: Text(
                     title,
                     textAlign: TextAlign.end,
-                    style: kTextStyleButtonTitle,
+                    style: kTextStyleButtonTitle.copyWith(color: kColor2),
                   ),
                 ),
               ],

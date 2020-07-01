@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mpha/screens/ht_Ifraad.dart';
+import 'package:mpha/models/pilgrim.dart';
+import 'package:mpha/provider/pilgrim_provider.dart';
+import 'package:mpha/screens/account_settings.dart';
+import 'package:mpha/screens/azkar_mostahaba.dart';
+import 'package:mpha/strings.dart';
 import 'package:mpha/widgets/bordered_container.dart';
 import 'package:mpha/widgets/image_text_button.dart';
 import 'package:mpha/widgets/main_widget.dart';
-import 'package:mpha/screens/azkar_mostahaba.dart';
-import 'package:mpha/strings.dart';
+import 'package:mpha/widgets/text_button.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = 'hamePage';
@@ -29,7 +33,7 @@ class HomePage extends StatelessWidget {
                 .width * .5,
             child: BorderedContainer(),
           ),
-          buildExpandedGridVew(isLandScape),
+          buildExpandedGridVew(isLandScape, context),
         ],
       )
           : Column(
@@ -41,33 +45,40 @@ class HomePage extends StatelessWidget {
                 .height * .4,
             child: BorderedContainer(),
           ),
-          buildExpandedGridVew(isLandScape)
+          buildExpandedGridVew(isLandScape, context)
         ],
       ),
     );
   }
 
-  Expanded buildExpandedGridVew(bool isLanScape) {
+  Expanded buildExpandedGridVew(bool isLanScape, BuildContext context) {
+    final pilgrimProvider = Provider.of<PilgrimProvider>(context);
+
     return Expanded(
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                ImageTextButton(
-                    title: ksManasicAlhajj,
-                    imageUrl: 'assets/images/manasic_alhajj.png',
-                    targetedScreen: HTIfraad.routeName,
-                    type: 1,
-                    isLanScape: isLanScape),
-                ImageTextButton(
-                    title: ksManasicAlOmrah,
-                    imageUrl: 'assets/images/kaba.PNG',
-                    targetedScreen: '',
-                    type: 1,
-                    isLanScape: isLanScape),
-              ],
-            ),
+            pilgrimProvider.currentUser.mansacType == null
+                ? Container(
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height * .250,
+              child: TextButton(
+                title: 'لم يتم إختيار المنسك',
+                targetedScreen: AccountSettings.routeName,
+              ),
+            )
+                : ImageTextButton(
+                title: ' مناسك ${pilgrimProvider.buttonText}',
+                imageUrl: pilgrimProvider.currentUser.mansacType ==
+                    MansacType.hajj
+                    ? 'assets/images/manasic_alhajj.png'
+                    : 'assets/images/kaba.PNG',
+                targetedScreen: pilgrimProvider.targetedScreen,
+                type: 1,
+                isLanScape: isLanScape),
             Row(
               children: <Widget>[
                 ImageTextButton(

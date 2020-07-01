@@ -5,6 +5,7 @@ const String ksMaps = "الخرائط";
 const String ksManasicAlhajj = "مناسك الحَج";
 const String ksExit = "خروج";
 const String ksHajjTypes = "أنواع الحَجْ";
+const String ksHajjType = "نوع الحَجْ";
 
 const String ksHajjEfrad = "حَجْ الإِفراد";
 const String ksBeforOf8 = "أعمال ما قبل اليوم الثامن من ذو الحجة";
@@ -61,13 +62,15 @@ const String ksVedios = "فيديوهات تعليمية";
 
 
 const String ksAboutHajj = "عن الحاج";
-const String ksGender = "جنس الحاج";
+const String ksGender = "نوع الحاج";
 const String ksMale = "ذكر";
 const String ksFemale = "أنثى";
-const String ksChoseGender = "إختار الجنس";
-const String ksChoseMansacType = "إختار نوع المنسك";
-const String ksHajj = "حج";
-const String ksOmrah = "عمرة";
+const String ksChoseGender = "إختيار النوع";
+const String ksChoseMansacType = "إختيار المنسك";
+const String ksMansacType = "نوع المنسك";
+const String ksHajj = "حَجْ";
+const String ksOmrah = "عُمرة";
+const String ksAlOmrah = "العُمرة";
 
 
 const String ksBefore8ZoElhejja = "قبل الثامن من ذوالحجة";
@@ -75,8 +78,16 @@ const String ksArafaDay = "يوم عرفة";
 
 const String ksTimeToArriveMaka = "زمن الوصول الى مكة";
 
-const String ksSave = "حفظ";
+const String ksSave = "حِفظ";
+const String ksSettingsSave = "حِفظ الإعدادات";
+const String ksSkip = "تخطي";
+
+const String ksOk = "تم";
 const String ksLogin = "تسجيل الدخول";
+
+const String ksPleaseInterTheFirstName = "الرجاء أدخل أسمك الأول";
+const String ksPleaseInterTheLastName = "الرجاء أدخل أسمك الأخير";
+
 
 
 

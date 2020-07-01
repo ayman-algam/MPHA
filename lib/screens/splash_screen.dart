@@ -1,8 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mpha/provider/pilgrim_provider.dart';
+import 'package:mpha/screens/account_settings.dart';
 import 'package:mpha/screens/home_page.dart';
 import 'package:mpha/theme.dart';
+import 'package:provider/provider.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -19,8 +22,15 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 5), () =>
-        Navigator.pushNamed(context, HomePage.routeName),);
+    Timer(Duration(seconds: 3), () {
+      if (Provider
+          .of<PilgrimProvider>(context, listen: false)
+          .isNewUser) {
+        return Navigator.pushNamed(context, AccountSettings.routeName);
+      } else {
+        return Navigator.pushNamed(context, HomePage.routeName);
+      }
+    });
   }
 
   @override
